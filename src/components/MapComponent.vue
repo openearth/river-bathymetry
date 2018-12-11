@@ -14,26 +14,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'map-component',
-  components: {
-  },
-  mounted() {
-   this.map = this.$refs.map.map
-   this.map.on('load', () => {
-     this.map.addLayer({
-       id: "depth",
-       "source-layer": "right-hand-corrected-2-26vezl",
-       source: {
-         type: "fill",
-         url: "mapbox://vandermark.00f06cef"
-       },
-       type: "fill"
-     });
-   })
- }
-}
+<script src="./map-component.js">
 </script>
 
 <style>

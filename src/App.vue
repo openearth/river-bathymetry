@@ -14,35 +14,13 @@
   </v-app>
 </template>
 
-<script>
-import MapComponent from './components/MapComponent'
-
-export default {
-  name: 'App',
-  components: {
-    'map-component': MapComponent
-  },
-  data () {
-    return {
-      drawer: true,
-      depthSwitch: true
-    }
-  },
-  watch: {
-    depthSwitch: {
-      handler: function(depthSwitch){
-        if (depthSwitch){
-          this.map.setLayoutProperty('depth', 'visibility', 'visible');
-        } else {
-          this.map.setLayoutProperty('depth', 'visibility', 'none');
-        }
-      }
-    }
-  }
-}
+<script src="./app.js">
 </script>
 
 <style>
+#navdrawer {
+  top: 64px;
+}
 html, body {
   width: 100vw;
   height: 100vh;

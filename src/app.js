@@ -12,7 +12,8 @@ export default {
   },
   data () {
     return {
-      drawer: true
+      drawer: true,
+      depthSwitch: true
     }
   },
   mounted () {

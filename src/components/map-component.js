@@ -13,9 +13,10 @@ export default {
 
     // wait for the map to load
     this.map.on('load', () => {
-      console.log(dataLayers)
-      dataLayers.forEach((layer) => {
+      console.log(this.$store.state.dataLayers)
+      this.$store.state.dataLayers.forEach((layer) => {
         layer['mapbox-layers'].forEach((maplayer) => {
+          console.log("hi:",maplayer)
           this.map.addLayer(maplayer)
         })
       })

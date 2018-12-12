@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-navigation-drawer id="navdrawer" app v-model="drawer">
-      <v-switch label="Depth Layer" v-model="depthSwitch">
-      </v-switch>
+      <menu-component>
+      </menu-component>
     </v-navigation-drawer>
     <v-toolbar id="toolbar" xs6 color="grey lighten-4" fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>

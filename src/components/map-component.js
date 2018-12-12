@@ -16,7 +16,6 @@ export default {
       console.log(this.$store.state.dataLayers)
       this.$store.state.dataLayers.forEach((layer) => {
         layer['mapbox-layers'].forEach((maplayer) => {
-          console.log("hi:",maplayer)
           this.map.addLayer(maplayer)
         })
       })

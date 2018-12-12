@@ -29,7 +29,6 @@ export default {
       this.$store.state.dataLayers.forEach((layer) => {
         console.log(layer)
         layer['mapbox-layers'].forEach((sublayer) => {
-          console.log(sublayer, sublayer.id)
           if (this.$store.state.map.getLayer(sublayer.id) !== undefined) {
             if (layer.active) {
               this.$store.state.map.setLayoutProperty(sublayer.id, 'visibility', vis[1]);

@@ -6,7 +6,7 @@
     </v-navigation-drawer>
     <v-toolbar id="toolbar" xs6 color="grey lighten-4" fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>River Bathymetry</v-toolbar-title>
+      <v-toolbar-title>Dieptekaarten</v-toolbar-title>
     </v-toolbar>
    </div>
     <map-component>

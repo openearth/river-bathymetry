@@ -1,3 +1,4 @@
+// import {}
 export default {
   name: 'map-component',
   data: () => {
@@ -15,6 +16,11 @@ export default {
     this.map.on('load', () => {
       console.log(this.$store.state.dataLayers)
       this.$store.state.dataLayers.forEach((layer) => {
+        layer['mapbox-layers'].forEach((maplayer) => {
+          this.map.addLayer(maplayer)
+        })
+      })
+      this.$store.state.diffLayers.forEach((layer) => {
         layer['mapbox-layers'].forEach((maplayer) => {
           this.map.addLayer(maplayer)
         })

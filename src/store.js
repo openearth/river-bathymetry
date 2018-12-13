@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
      map: null,
-     dataLayers: []
+     dataLayers: []//,
+     // diffLayers: []
    },
    mutations: {
      setMap (state, map) {
@@ -15,9 +16,12 @@ export default new Vuex.Store({
      },
      setDataLayers (state, dataLayers) {
        state.dataLayers = dataLayers
+     },
+     setDiffLayers (state, diffLayers) {
+       state.diffLayers = diffLayers
      }
    },
    actions: {
- 
+
    }
 })

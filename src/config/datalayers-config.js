@@ -137,6 +137,8 @@ const diffLayers = [{
 {
   "menu-title": "2085",
   "active": false,
+  "barlegend": "background: linear-gradient(to left, rgb(0, 104, 55), rgb(217, 239, 139) 51%, rgb(222, 222, 222) 50%, rgb(254, 224, 139) 51%, rgb(165, 0, 38));",
+  "bartext": "-2 0 2",
   "mapbox-layers": [{
     "id": "verschil-2085",
     "type": "fill",

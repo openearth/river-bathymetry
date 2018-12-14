@@ -1,12 +1,13 @@
 <template>
   <v-app>
+    <!-- <disclaimer-component></disclaimer-component> -->
     <v-navigation-drawer id="navdrawer" app v-model="drawer">
       <menu-component>
       </menu-component>
     </v-navigation-drawer>
     <v-toolbar id="toolbar" xs6 color="grey lighten-4" fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Dieptekaarten</v-toolbar-title>
+      <v-toolbar-title>Klimaatbestendigheid hoofdvaarwegennetwerk: signaleringskaarten</v-toolbar-title>
     </v-toolbar>
    </div>
     <map-component>
@@ -18,9 +19,6 @@
 </script>
 
 <style>
-#navdrawer {
-  top: 64px;
-}
 html, body {
   width: 100vw;
   height: 100vh;

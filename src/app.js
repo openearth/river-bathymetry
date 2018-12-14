@@ -1,5 +1,6 @@
 import MapComponent from './components/MapComponent'
 import MenuComponent from './components/MenuComponent'
+import DisclaimerComponent from './components/MenuComponent'
 import {
   dataLayers,
   diffLayers
@@ -9,7 +10,8 @@ export default {
   name: 'App',
   components: {
     'map-component': MapComponent,
-    'menu-component': MenuComponent
+    'menu-component': MenuComponent,
+    'disclaimer-component': DisclaimerComponent
   },
   data () {
     return {

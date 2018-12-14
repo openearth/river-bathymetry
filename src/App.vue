@@ -10,8 +10,8 @@
       <v-toolbar-title>Klimaatbestendigheid hoofdvaarwegennetwerk: signaleringskaarten</v-toolbar-title>
     </v-toolbar>
    </div>
-    <map-component>
-    </map-component>
+  <map-component>
+  </map-component>
   </v-app>
 </template>
 

@@ -5,22 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-     map: null,
-     dataLayers: []
-   },
-   mutations: {
-     setMap (state, map) {
-       map.resize()
-       state.map = map
-     },
-     setDataLayers (state, dataLayers) {
-       state.dataLayers = dataLayers
-     },
-     setDiffLayers (state, diffLayers) {
-       state.diffLayers = diffLayers
-     }
-   },
-   actions: {
+    map: null,
+    dataLayers: []
+  },
+  mutations: {
+    setMap (state, map) {
+      map.resize()
+      state.map = map
+    },
+    setDataLayers (state, dataLayers) {
+      state.dataLayers = dataLayers
+    },
+    setDiffLayers (state, diffLayers) {
+      state.diffLayers = diffLayers
+    }
+  },
+  actions: {
 
-   }
+  }
 })

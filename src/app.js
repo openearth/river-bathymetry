@@ -1,6 +1,7 @@
 import MapComponent from './components/MapComponent'
 import MenuComponent from './components/MenuComponent'
-import DisclaimerComponent from './components/MenuComponent'
+import store from './store'
+
 import {
   dataLayers,
   diffLayers,
@@ -9,10 +10,10 @@ import {
 
 export default {
   name: 'App',
+  store,
   components: {
     'map-component': MapComponent,
-    'menu-component': MenuComponent,
-    'disclaimer-component': DisclaimerComponent
+    'menu-component': MenuComponent
   },
   data () {
     return {
@@ -20,9 +21,9 @@ export default {
     }
   },
   mounted () {
-    this.$store.commit('setDataLayers', dataLayers),
-    this.$store.commit('setDiffLayers', diffLayers)
-    this.$store.commit('setLegends', legends)
+    store.commit('setDataLayers', dataLayers)
+    store.commit('setDiffLayers', diffLayers)
+    store.commit('setLegends', legends)
   },
   methods: {
   }

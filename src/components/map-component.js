@@ -1,6 +1,9 @@
 import mapboxgl from 'mapbox-gl'
+import store from '../store'
+
 export default {
   name: 'map-component',
+  store,
   data: () => {
     return {
       map: null
@@ -9,19 +12,19 @@ export default {
   components: {},
   mounted () {
     this.map = this.$refs.map.map
-    this.$store.commit('setMap', this.map)
+    store.commit('setMap', this.map)
 
     // wait for the map to load
     this.map.on('load', () => {
       this.map.addControl(new mapboxgl.NavigationControl())
 
-      console.log(this.$store.state.dataLayers)
-      this.$store.state.dataLayers.forEach((layer) => {
+      console.log(store.state.dataLayers)
+      store.state.dataLayers.forEach((layer) => {
         layer['mapbox-layers'].forEach((maplayer) => {
           this.map.addLayer(maplayer)
         })
       })
-      this.$store.state.diffLayers.forEach((layer) => {
+      store.state.diffLayers.forEach((layer) => {
         layer['mapbox-layers'].forEach((maplayer) => {
           this.map.addLayer(maplayer)
         })

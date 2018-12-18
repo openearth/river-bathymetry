@@ -6,8 +6,7 @@ export default {
       map: null
     }
   },
-  components: {
-  },
+  components: {},
   mounted () {
     this.map = this.$refs.map.map
     this.$store.commit('setMap', this.map)

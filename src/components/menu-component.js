@@ -38,10 +38,8 @@ export default {
       colofon: [true]
     }
   },
-  components: {
-  },
-  mounted () {
-  },
+  components: {},
+  mounted () {},
   methods: {
     selectScenario () {
       console.log('Scenario selected:', this.selectedScenario.id, this.selectedScenario.condition)

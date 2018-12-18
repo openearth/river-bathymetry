@@ -6,7 +6,17 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     map: null,
-    dataLayers: []
+    dataLayers: [],
+    legends: {
+      dataLayers: {
+        'barlegend': '',
+        'bartext': ''
+      },
+      diffLayers: {
+        'barlegend': '',
+        'bartext': ''
+      }
+    }
   },
   mutations: {
     setMap (state, map) {
@@ -15,8 +25,15 @@ export default new Vuex.Store({
     },
     setDataLayers (state, dataLayers) {
       state.dataLayers = dataLayers
+    },
+    setDiffLayers (state, diffLayers) {
+      state.diffLayers = diffLayers
+    },
+    setLegends (state, legends) {
+      state.legends = legends
     }
   },
   actions: {
+
   }
 })

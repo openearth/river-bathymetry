@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <v-navigation-drawer id="navdrawer" app v-model="drawer">
+    <v-navigation-drawer id="navdrawer" hide-overlay app v-model="drawer">
       <menu-component>
       </menu-component>
     </v-navigation-drawer>
-    <v-toolbar id="toolbar" xs6 color="grey lighten-4" fixed app>
+    <v-toolbar height="64px" fixed>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>River Bathymetry</v-toolbar-title>
+      <v-toolbar-title>Klimaatbestendigheid hoofdvaarwegennetwerk: signaleringskaarten</v-toolbar-title>
     </v-toolbar>
     <map-component>
     </map-component>
@@ -17,12 +17,7 @@
 </script>
 
 <style>
-#navdrawer {
-  top: 64px;
-}
-
-html,
-body {
+html, body {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -38,4 +33,14 @@ body {
   width: 100%;
   height: 100%;
 }
+
+#navdrawer {
+  top: 64px;
+  z-index: 1;
+  overflow-y: overlay;
+  max-height: calc(100% - 64px);
+  width: 20vw !important;
+  min-width: 300px !important;
+}
+
 </style>

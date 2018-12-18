@@ -23,6 +23,7 @@
 @import '~mapbox-gl/dist/mapbox-gl.css';
 
 #map {
+  top: 64px;
   width: 100%;
   height: 100%;
 }

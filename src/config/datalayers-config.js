@@ -1,43 +1,188 @@
+const legends = {
+  dataLayers: {
+    'barlegend': 'background: linear-gradient(to right, rgb(140,81,10), rgb(246,232,195) 25%, rgb(199,234,229) 38%, rgb(0,60,48));',
+    'bartext': '0 4 8'
+  },
+  diffLayers: {
+    'barlegend': 'background: linear-gradient(to left, rgb(0, 104, 55), rgb(217, 239, 139) 51%, rgb(222, 222, 222) 50%, rgb(254, 224, 139) 51%, rgb(165, 0, 38));',
+    'bartext': '-2 0 2'
+  }
+}
+
 const dataLayers = [{
-  'menu-title': 'Depth Layer',
+  'menu-title': 'Referentie',
   'active': true,
+  'opacity': 100,
   'mapbox-layers': [{
-    'id': 'right-hand-corrected-2-26vezl',
+    'id': 'ref',
     'type': 'fill',
     'source': {
-      'url': 'mapbox://vandermark.00f06cef',
+      'url': 'mapbox://vandermark.8nmjjhd8',
       'type': 'vector'
     },
-    'source-layer': 'right-hand-corrected-2-26vezl',
+    'source-layer': 'dep_OLR_combined_rh-81gyyf',
     'layout': {},
     'paint': {
       'fill-color': [
         'interpolate',
         ['linear'],
-        ['get', 'Val_1'],
+        ['get', '1 ref'],
         -999,
-        'hsla(0, 0%, 0%, 0)',
+        'rgba(0, 0, 0, 0)',
         0,
-        'hsl(0, 100%, 49%)',
-        1,
-        'hsl(39, 100%, 52%)',
+        'rgb(140,81,10)',
         2,
-        'hsl(72, 100%, 48%)',
+        'rgb(246,232,195)',
         3,
-        'hsl(160, 100%, 44%)',
-        4,
-        'hsl(187, 100%, 44%)',
-        5,
-        'hsl(216, 100%, 44%)',
-        6,
-        'hsl(239, 100%, 44%)',
-        7,
-        'hsl(265, 100%, 44%)'
+        'rgb(199,234,229)',
+        8,
+        'rgb(0,60,48)'
       ]
     }
   }]
-}]
+},
+{
+  'menu-title': '2050',
+  'active': false,
+  'opacity': 100,
+  'mapbox-layers': [{
+    'id': '2050',
+    'type': 'fill',
+    'source': {
+      'url': 'mapbox://vandermark.8nmjjhd8',
+      'type': 'vector'
+    },
+    'source-layer': 'dep_OLR_combined_rh-81gyyf',
+    'layout': {
+      'visibility': 'none'
+    },
+    'paint': {
+      'fill-color': [
+        'interpolate',
+        ['linear'],
+        ['get', '2 2050WH'],
+        -999,
+        'rgba(0, 0, 0, 0)',
+        0,
+        'rgb(140,81,10)',
+        2,
+        'rgb(246,232,195)',
+        3,
+        'rgb(199,234,229)',
+        8,
+        'rgb(0,60,48)'
+      ]
+    }
+  }]
+},
+{
+  'menu-title': '2085',
+  'active': false,
+  'opacity': 100,
+  'mapbox-layers': [{
+    'id': '2085',
+    'type': 'fill',
+    'source': {
+      'url': 'mapbox://vandermark.8nmjjhd8',
+      'type': 'vector'
+    },
+    'source-layer': 'dep_OLR_combined_rh-81gyyf',
+    'layout': {
+      'visibility': 'none'
+    },
+    'paint': {
+      'fill-color': [
+        'interpolate',
+        ['linear'],
+        ['get', '2 2085WH'],
+        -999,
+        'rgba(0, 0, 0, 0)',
+        0,
+        'rgb(140,81,10)',
+        2,
+        'rgb(246,232,195)',
+        3,
+        'rgb(199,234,229)',
+        8,
+        'rgb(0,60,48)'
+      ]
+    }
+  }]
+}
+]
+
+const diffLayers = [{
+  'menu-title': '2050',
+  'active': false,
+  'opacity': 100,
+  'mapbox-layers': [{
+    'id': 'verschil-2050',
+    'type': 'fill',
+    'source': {
+      'url': 'mapbox://vandermark.4neu6lb4',
+      'type': 'vector'
+    },
+    'source-layer': 'diff_OLR_combined_rh-dy88f6',
+    'layout': {
+      'visibility': 'none'
+    },
+    'paint': {
+      'fill-color': [
+        'interpolate',
+        ['linear'],
+        ['get', '2 2050WH'],
+        -2,
+        'rgb(165, 0, 38)',
+        -0.01,
+        'rgb(254, 224, 139)',
+        0,
+        'rgb(222, 222, 222)',
+        0.01,
+        'rgb(217, 239, 139)',
+        2,
+        'rgb(0, 104, 55)'
+      ]
+    }
+  }]
+},
+{
+  'menu-title': '2085',
+  'active': false,
+  'opacity': 100,
+  'mapbox-layers': [{
+    'id': 'verschil-2085',
+    'type': 'fill',
+    'source': {
+      'url': 'mapbox://vandermark.4neu6lb4',
+      'type': 'vector'
+    },
+    'source-layer': 'diff_OLR_combined_rh-dy88f6',
+    'layout': {
+      'visibility': 'none'
+    },
+    'paint': {
+      'fill-color': [
+        'interpolate',
+        ['linear'],
+        ['get', '2 2050WH'],
+        -2,
+        'rgb(165, 0, 38)',
+        -0.01,
+        'rgb(254, 224, 139)',
+        0,
+        'rgb(222, 222, 222)',
+        0.01,
+        'rgb(217, 239, 139)',
+        2,
+        'rgb(0, 104, 55)'
+      ]
+    }
+  }]
+}
+]
 
 export {
-  dataLayers
+  dataLayers,
+  diffLayers,
+  legends
 }

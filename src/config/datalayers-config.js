@@ -1,8 +1,18 @@
+const legends = {
+  dataLayers: {
+    'barlegend': 'background: linear-gradient(to right, rgb(140,81,10), rgb(246,232,195) 25%, rgb(199,234,229) 38%, rgb(0,60,48));',
+    'bartext': '0 4 8'
+  },
+  diffLayers: {
+    'barlegend': 'background: linear-gradient(to left, rgb(0, 104, 55), rgb(217, 239, 139) 51%, rgb(222, 222, 222) 50%, rgb(254, 224, 139) 51%, rgb(165, 0, 38));',
+    'bartext': '-2 0 2'
+  }
+}
+
 const dataLayers = [{
   'menu-title': 'Referentie',
   'active': true,
-  'barlegend': 'background: linear-gradient(to right, rgb(140,81,10), rgb(246,232,195) 25%, rgb(199,234,229) 38%, rgb(0,60,48));',
-  'bartext': '0 4 8',
+  'opacity': 100,
   'mapbox-layers': [{
     'id': 'ref',
     'type': 'fill',
@@ -34,6 +44,7 @@ const dataLayers = [{
 {
   'menu-title': '2050',
   'active': false,
+  'opacity': 100,
   'mapbox-layers': [{
     'id': '2050',
     'type': 'fill',
@@ -67,6 +78,7 @@ const dataLayers = [{
 {
   'menu-title': '2085',
   'active': false,
+  'opacity': 100,
   'mapbox-layers': [{
     'id': '2085',
     'type': 'fill',
@@ -102,8 +114,7 @@ const dataLayers = [{
 const diffLayers = [{
   'menu-title': '2050',
   'active': false,
-  'barlegend': 'background: linear-gradient(to left, rgb(0, 104, 55), rgb(217, 239, 139) 51%, rgb(222, 222, 222) 50%, rgb(254, 224, 139) 51%, rgb(165, 0, 38));',
-  'bartext': '-2 0 2',
+  'opacity': 100,
   'mapbox-layers': [{
     'id': 'verschil-2050',
     'type': 'fill',
@@ -137,8 +148,7 @@ const diffLayers = [{
 {
   'menu-title': '2085',
   'active': false,
-  'barlegend': 'background: linear-gradient(to left, rgb(0, 104, 55), rgb(217, 239, 139) 51%, rgb(222, 222, 222) 50%, rgb(254, 224, 139) 51%, rgb(165, 0, 38));',
-  'bartext': '-2 0 2',
+  'opacity': 100,
   'mapbox-layers': [{
     'id': 'verschil-2085',
     'type': 'fill',
@@ -173,5 +183,6 @@ const diffLayers = [{
 
 export {
   dataLayers,
-  diffLayers
+  diffLayers,
+  legends
 }

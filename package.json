@@ -7,9 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -d dist"
-
   },
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "mapbox-gl": "^0.50.0",
     "vue": "^2.5.17",
     "vue2mapbox-gl": "^0.4.50",

@@ -1,85 +1,47 @@
 <template>
   <div id="menu">
-    <div id="layers">
+    <div v-for="menulayer in menulayers" :key="menulayer.title">
       <v-expansion-panel class="v-diepte" expand>
         <v-expansion-panel-content>
           <v-toolbar class="toolbar" dense flat slot="header" color="grey lighten-4">
             <v-toolbar-title>
-              Dieptelagen
+              {{menulayer.title}}
             </v-toolbar-title>
           </v-toolbar>
-          <v-card small>
+          <v-card small id='layer-card'>
             <v-select
-              v-model="selectedScenario"
+              v-model="menulayer.selected"
               :items="scenarios"
               item-text="name"
               item-value="name"
-              box
               label="Scenario"
               return-object
-              v-on:change="selectScenario()">
+              v-on:change="selectScenario(menulayer.datalayername)">
             ></v-select>
-            <v-list v-for="datalayer in $store.state.dataLayers" :key="datalayer['menu-title']">
+            <div v-if='$store.state.legends[menulayer.datalayername].barlegend' class='bar-wrapper'>
+              <div :style='$store.state.legends[menulayer.datalayername].barlegend' class='bar'></div>
+              <div class='bartext'>{{$store.state.legends[menulayer.datalayername].bartext}} </div>
+            </div>
+            <v-list v-for="datalayer in $store.state[menulayer.datalayername]" :key="datalayer['menu-title']" three-line>
               <v-list-tile>
                 <v-list-tile-avatar>
                   <v-switch
                     v-model="datalayer.active"
-                    v-on:change="toggleLayers()">
+                    v-on:change="toggleLayers(menulayer.datalayername)">
                   </v-switch>
                 </v-list-tile-avatar>
                 <v-list-tile-content>
-                  <v-list-tile-title>
+                  <v-list-tile-title class="px-3">
                     {{datalayer['menu-title']}}
                   </v-list-tile-title>
-                  <v-list-tile-sub-title>
-                    <div v-if='datalayer.barlegend' class='bar-wrapper'>
-                      <div :style='datalayer.barlegend' class='bar'></div>
-                      <div class='bartext'>{{datalayer.bartext}} </div>
-                    </div>
-                  </v-list-tile-sub-title>
-                </v-list-tile-content>
-              </v-list-tile>
-            </v-list>
-          </v-card>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </div>
-    <div id="differences">
-      <v-expansion-panel class="v-verschil">
-        <v-expansion-panel-content>
-          <v-toolbar class="toolbar" dense flat slot="header" color="grey lighten-4">
-            <v-toolbar-title>
-              Verschil Lagen
-            </v-toolbar-title>
-          </v-toolbar>
-          <v-card small>
-            <v-select
-              v-model="selectedDiffScenario"
-              :items="diffScenarios"
-              item-text="name"
-              item-value="name"
-              box
-              label="Scenario"
-              return-object
-              v-on:change="selectDiffScenario()">
-            ></v-select>
-            <v-list v-for="difflayer in $store.state.diffLayers" :key="difflayer['menu-title']">
-              <v-list-tile>
-                <v-list-tile-avatar>
-                  <v-switch
-                    v-model="difflayer.active"
-                    v-on:change="toggleDiffLayers()">
-                  </v-switch>
-                </v-list-tile-avatar>
-                <v-list-tile-content>
-                  <v-list-tile-title>
-                    {{difflayer['menu-title']}}
-                  </v-list-tile-title>
-                  <v-list-tile-sub-title>
-                    <div v-if='difflayer.barlegend' class='bar-wrapper'>
-                      <div :style='difflayer.barlegend' class='bar'></div>
-                      <div class='bartext'>{{difflayer.bartext}} </div>
-                    </div>
+                  <v-list-tile-sub-title class="px-3">
+                    <v-slider
+                      hide-details
+                      class="pl-3 ma-0"
+                      v-model="datalayer.opacity"
+                      v-on:input="setOpacity(datalayer['mapbox-layers'].map(x => x.id), datalayer.opacity)">
+                    </v-slider>
+                    Transparantie {{datalayer.opacity}}%
                   </v-list-tile-sub-title>
                 </v-list-tile-content>
               </v-list-tile>
@@ -97,9 +59,12 @@
         </v-toolbar>
         <v-card small>
           <v-card-title primary-title>
-            <pre>
-              Voor meer informatie over deze viewer kunt u terecht bij Milou Wolters (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Rolien van der Mark (<a href="https://www.deltares.nl/nl/">Deltares</a>). Voor meer informatie over Klimaatbestendige Netwerken is te verkrijgen bij Angela Vlaar (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Gerda Lenselink (<a href="https://www.deltares.nl/nl/">Deltares</a>).
-            </pre>
+            <p>
+              Voor meer informatie over deze viewer kunt u terecht bij Milou Wolters (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Rolien van der Mark (<a href="https://www.deltares.nl/nl/">Deltares</a>).
+            <br>
+              Voor meer informatie over Klimaatbestendige Netwerken is te verkrijgen bij Angela Vlaar (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Gerda Lenselink (<a href="https://www.deltares.nl/nl/">Deltares</a>).
+            </p>
+
             <div id="logos">
               <img class="logos" src="../../static/images/Rijkswaterstaat.svg">
               <img class="logos" src="../../static/images/deltares.svg">
@@ -144,4 +109,13 @@ pre {
   width: 50%;
   height: auto;
 }
+
+#layer-card {
+  padding: 0 20px 0 20px;
+}
+
+.v-expansion-panel__header {
+  background-color: #F5F5F5;
+}
+
 </style>

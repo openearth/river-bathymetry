@@ -5,8 +5,7 @@ export default {
       map: null
     }
   },
-  components: {
-  },
+  components: {},
   mounted () {
     this.map = this.$refs.map.map
     this.$store.commit('setMap', this.map)
@@ -16,7 +15,6 @@ export default {
       console.log(this.$store.state.dataLayers)
       this.$store.state.dataLayers.forEach((layer) => {
         layer['mapbox-layers'].forEach((maplayer) => {
-          console.log("hi:",maplayer)
           this.map.addLayer(maplayer)
         })
       })

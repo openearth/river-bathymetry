@@ -8,7 +8,6 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>River Bathymetry</v-toolbar-title>
     </v-toolbar>
-   </div>
     <map-component>
     </map-component>
   </v-app>
@@ -21,13 +20,16 @@
 #navdrawer {
   top: 64px;
 }
-html, body {
+
+html,
+body {
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

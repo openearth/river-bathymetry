@@ -1,6 +1,10 @@
 const legends = {
+  referenceLayer: {
+    'barlegend': 'background: linear-gradient(to left, rgb(50, 136, 189), rgb(255, 255, 191), rgb(213, 52, 79));',
+    'bartext': '0 4 8'
+  },
   dataLayers: {
-    'barlegend': 'background: linear-gradient(to right, rgb(140,81,10), rgb(246,232,195) 25%, rgb(199,234,229) 38%, rgb(0,60,48));',
+    'barlegend': 'background: linear-gradient(to left, rgb(50, 136, 189), rgb(255, 255, 191), rgb(213, 52, 79));',
     'bartext': '0 4 8'
   },
   diffLayers: {
@@ -9,7 +13,8 @@ const legends = {
   }
 }
 
-const dataLayers = [{
+const referenceLayer = [
+{
   'menu-title': 'Referentie',
   'active': true,
   'opacity': 100,
@@ -30,17 +35,18 @@ const dataLayers = [{
         -999,
         'rgba(0, 0, 0, 0)',
         0,
-        'rgb(140,81,10)',
-        2,
-        'rgb(246,232,195)',
-        3,
-        'rgb(199,234,229)',
+        'rgb(213, 52, 79)',
+        4,
+        'rgb(255, 255, 191)',
         8,
-        'rgb(0,60,48)'
+        'rgb(50, 136, 189)'
       ]
     }
   }]
-},
+}
+]
+
+const dataLayers = [
 {
   'menu-title': '2050',
   'active': false,
@@ -60,17 +66,15 @@ const dataLayers = [{
       'fill-color': [
         'interpolate',
         ['linear'],
-        ['get', '2 2050WH'],
+        ['get', '1 ref'],
         -999,
         'rgba(0, 0, 0, 0)',
         0,
-        'rgb(140,81,10)',
-        2,
-        'rgb(246,232,195)',
-        3,
-        'rgb(199,234,229)',
+        'rgb(213, 52, 79)',
+        4,
+        'rgb(255, 255, 191)',
         8,
-        'rgb(0,60,48)'
+        'rgb(50, 136, 189)'
       ]
     }
   }]
@@ -94,17 +98,15 @@ const dataLayers = [{
       'fill-color': [
         'interpolate',
         ['linear'],
-        ['get', '2 2085WH'],
+        ['get', '1 ref'],
         -999,
         'rgba(0, 0, 0, 0)',
         0,
-        'rgb(140,81,10)',
-        2,
-        'rgb(246,232,195)',
-        3,
-        'rgb(199,234,229)',
+        'rgb(213, 52, 79)',
+        4,
+        'rgb(255, 255, 191)',
         8,
-        'rgb(0,60,48)'
+        'rgb(50, 136, 189)'
       ]
     }
   }]
@@ -184,5 +186,6 @@ const diffLayers = [{
 export {
   dataLayers,
   diffLayers,
+  referenceLayer,
   legends
 }

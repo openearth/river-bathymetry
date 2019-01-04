@@ -20,13 +20,20 @@ export default {
       years: ['2050', '2085'],
       colofon: [true],
       menulayers: [{
+        title: 'Referentie Laag',
+        datalayername: 'referenceLayer',
+        selected: '',
+        expanded: [true]
+      }, {
         title: 'Dieptelagen',
         datalayername: 'dataLayers',
-        selected: ''
+        selected: '',
+        expanded: [false]
       }, {
         title: 'Verschil lagen',
         datalayername: 'diffLayers',
-        selected: ''
+        selected: '',
+        expanded: [false]
       }]
     }
   },
@@ -67,17 +74,15 @@ export default {
           this.$store.state.map.setPaintProperty(year, 'fill-color', [
             'interpolate',
             ['linear'],
-            ['get', `${this.menulayers[0].selected.id} ${year}${this.menulayers[0].selected.condition}`],
+            ['get', `${this.menulayers[1].selected.id} ${year}${this.menulayers[1].selected.condition}`],
             -999,
             'rgba(0, 0, 0, 0)',
             0,
-            'rgb(140,81,10)',
-            2,
-            'rgb(246,232,195)',
-            3,
-            'rgb(199,234,229)',
+            'rgb(213, 52, 79)',
+            4,
+            'rgb(255, 255, 191)',
             8,
-            'rgb(0,60,48)'
+            'rgb(50, 136, 189)'
           ])
         })
       } else if (type === 'diffLayers') {
@@ -85,7 +90,7 @@ export default {
           this.$store.state.map.setPaintProperty(`verschil-${year}`, 'fill-color', [
             'interpolate',
             ['linear'],
-            ['get', `${this.menulayers[1].selected.id} ${year}${this.menulayers[1].selected.condition}`],
+            ['get', `${this.menulayers[2].selected.id} ${year}${this.menulayers[2].selected.condition}`],
             -2,
             'rgb(165, 0, 38)',
             -0.01,

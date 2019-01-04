@@ -8,6 +8,10 @@ export default new Vuex.Store({
     map: null,
     dataLayers: [],
     legends: {
+      referenceLayer: {
+        'barlegend': '',
+        'bartext': ''
+      },
       dataLayers: {
         'barlegend': '',
         'bartext': ''
@@ -31,6 +35,9 @@ export default new Vuex.Store({
     },
     setLegends (state, legends) {
       state.legends = legends
+    },
+    setReferenceLayer (state, referenceLayer) {
+      state.referenceLayer = referenceLayer
     }
   },
   actions: {

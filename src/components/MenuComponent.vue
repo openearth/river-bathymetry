@@ -1,7 +1,7 @@
 <template>
   <div id="menu">
     <div v-for="menulayer in menulayers" :key="menulayer.title">
-      <v-expansion-panel class="v-diepte" expand>
+      <v-expansion-panel class="v-diepte" v-model="menulayer.expanded" expand>
         <v-expansion-panel-content>
           <v-toolbar class="toolbar" dense flat slot="header" color="grey lighten-4">
             <v-toolbar-title>
@@ -9,15 +9,17 @@
             </v-toolbar-title>
           </v-toolbar>
           <v-card small id='layer-card'>
-            <v-select
-              v-model="menulayer.selected"
-              :items="scenarios"
-              item-text="name"
-              item-value="name"
-              label="Scenario"
-              return-object
-              v-on:change="selectScenario(menulayer.datalayername)">
-            ></v-select>
+            <div v-if="((menulayer.datalayername === 'dataLayers') || (menulayer.datalayername === 'diffLayers'))" class='scenario-selector'>
+              <v-select
+                v-model="menulayer.selected"
+                :items="scenarios"
+                item-text="name"
+                item-value="name"
+                label="Scenario"
+                return-object
+                v-on:change="selectScenario(menulayer.datalayername)">
+              ></v-select>
+            </div>
             <div v-if='$store.state.legends[menulayer.datalayername].barlegend' class='bar-wrapper'>
               <div :style='$store.state.legends[menulayer.datalayername].barlegend' class='bar'></div>
               <div class='bartext'>{{$store.state.legends[menulayer.datalayername].bartext}} </div>
@@ -60,11 +62,12 @@
         <v-card small>
           <v-card-title primary-title>
             <p>
-              Voor meer informatie over deze viewer kunt u terecht bij Milou Wolters (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Rolien van der Mark (<a href="https://www.deltares.nl/nl/">Deltares</a>).
+              Dit instrument wordt ontwikkeld door Rijkswaterstaat en Deltares in het kader van Klimaatbestendige Netwerken. Op dit moment is het instrument nog in ontwikkeling, en bevat deze viewer kaarten van de vaardiepte bij OLR onder verschillende klimaatscenario’s voor een deel van het hoofdvaarwegennet. Aan de beelden kunnen geen rechten worden ontleend.
             <br>
-              Voor meer informatie over Klimaatbestendige Netwerken is te verkrijgen bij Angela Vlaar (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Gerda Lenselink (<a href="https://www.deltares.nl/nl/">Deltares</a>).
+            <br>
+              Voor meer informatie over deze viewer kunt u terecht bij Milou Wolters (Rijkswaterstaat) of Rolien van der Mark (Deltares).
+              Meer informatie over Klimaatbestendige Netwerken is te verkrijgen bij Angela Vlaar (Rijkswaterstaat) of Gerda Lenselink (Deltares).
             </p>
-
             <div id="logos">
               <img class="logos" src="../../static/images/Rijkswaterstaat.svg">
               <img class="logos" src="../../static/images/deltares.svg">

@@ -4,6 +4,7 @@ import DisclaimerComponent from './components/MenuComponent'
 import {
   dataLayers,
   diffLayers,
+  referenceLayer,
   legends
 } from './config/datalayers-config.js'
 
@@ -21,7 +22,8 @@ export default {
   },
   mounted () {
     this.$store.commit('setDataLayers', dataLayers),
-    this.$store.commit('setDiffLayers', diffLayers)
+    this.$store.commit('setDiffLayers', diffLayers),
+    this.$store.commit('setReferenceLayer', referenceLayer),
     this.$store.commit('setLegends', legends)
   },
   methods: {

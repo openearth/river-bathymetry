@@ -22,10 +22,10 @@ const referenceLayer = [
     'id': 'ref',
     'type': 'fill',
     'source': {
-      'url': 'mapbox://vandermark.8nmjjhd8',
+      'url': 'mapbox://vandermark.2myujnu2',
       'type': 'vector'
     },
-    'source-layer': 'dep_OLR_combined_rh-81gyyf',
+    'source-layer': 'dep_OLR_combined_v2_rh-ax4e9u',
     'layout': {},
     'paint': {
       'fill-color': [
@@ -55,10 +55,10 @@ const dataLayers = [
     'id': '2050',
     'type': 'fill',
     'source': {
-      'url': 'mapbox://vandermark.8nmjjhd8',
+      'url': 'mapbox://vandermark.2myujnu2',
       'type': 'vector'
     },
-    'source-layer': 'dep_OLR_combined_rh-81gyyf',
+    'source-layer': 'dep_OLR_combined_v2_rh-ax4e9u',
     'layout': {
       'visibility': 'none'
     },
@@ -87,10 +87,10 @@ const dataLayers = [
     'id': '2085',
     'type': 'fill',
     'source': {
-      'url': 'mapbox://vandermark.8nmjjhd8',
+      'url': 'mapbox://vandermark.2myujnu2',
       'type': 'vector'
     },
-    'source-layer': 'dep_OLR_combined_rh-81gyyf',
+    'source-layer': 'dep_OLR_combined_v2_rh-ax4e9u',
     'layout': {
       'visibility': 'none'
     },
@@ -121,10 +121,10 @@ const diffLayers = [{
     'id': 'verschil-2050',
     'type': 'fill',
     'source': {
-      'url': 'mapbox://vandermark.4neu6lb4',
+      'url': 'mapbox://vandermark.55lg37fx',
       'type': 'vector'
     },
-    'source-layer': 'diff_OLR_combined_rh-dy88f6',
+    'source-layer': 'diff_OLR_combined_v2_rh-8ena4t',
     'layout': {
       'visibility': 'none'
     },
@@ -155,10 +155,10 @@ const diffLayers = [{
     'id': 'verschil-2085',
     'type': 'fill',
     'source': {
-      'url': 'mapbox://vandermark.4neu6lb4',
+      'url': 'mapbox://vandermark.55lg37fx',
       'type': 'vector'
     },
-    'source-layer': 'diff_OLR_combined_rh-dy88f6',
+    'source-layer': 'diff_OLR_combined_v2_rh-8ena4t',
     'layout': {
       'visibility': 'none'
     },

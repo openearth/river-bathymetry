@@ -72,10 +72,11 @@ export default {
             ['linear'],
             ['get', `${this.menulayers[0].selected.id} ${year}${this.menulayers[0].selected.condition}`],
             -999, 'rgba(0, 0, 0, 0)',
-            0, 'rgb(140,81,10)',
-            2, 'rgb(246,232,195)',
-            3, 'rgb(199,234,229)',
-            8, 'rgb(0,60,48)'
+            0, '#0b0072',
+            2, '#2989d8',
+            4, '#6d7f1e',
+            6, '#c97220',
+            8, '#bf0000'
           ])
         })
       } else if (type === 'diffLayers') {

@@ -1,6 +1,6 @@
 const legends = {
   dataLayers: {
-    'barlegend': 'background: linear-gradient(to right, rgb(140,81,10), rgb(246,232,195) 25%, rgb(199,234,229) 38%, rgb(0,60,48));',
+    'barlegend': 'background: linear-gradient(to left, #0b0072 0%, #2989d8 25%, #6d7f1e 50%, #c97220 74%, #bf0000 100%)',
     'bartext': '0 4 8'
   },
   diffLayers: {
@@ -26,17 +26,19 @@ const dataLayers = [{
       'fill-color': [
         'interpolate',
         ['linear'],
-        ['get', '1 ref'],
+        ['get', '2 2050WH'],
         -999,
         'rgba(0, 0, 0, 0)',
         0,
-        'rgb(140,81,10)',
+        '#0b0072',
         2,
-        'rgb(246,232,195)',
-        3,
-        'rgb(199,234,229)',
+        '#2989d8',
+        4,
+        '#6d7f1e',
+        6,
+        '#c97220',
         8,
-        'rgb(0,60,48)'
+        '#bf0000'
       ]
     }
   }]
@@ -64,13 +66,15 @@ const dataLayers = [{
         -999,
         'rgba(0, 0, 0, 0)',
         0,
-        'rgb(140,81,10)',
+        '#0b0072',
         2,
-        'rgb(246,232,195)',
-        3,
-        'rgb(199,234,229)',
+        '#2989d8',
+        4,
+        '#6d7f1e',
+        6,
+        '#c97220',
         8,
-        'rgb(0,60,48)'
+        '#bf0000'
       ]
     }
   }]
@@ -98,13 +102,15 @@ const dataLayers = [{
         -999,
         'rgba(0, 0, 0, 0)',
         0,
-        'rgb(140,81,10)',
+        '#0b0072',
         2,
-        'rgb(246,232,195)',
-        3,
-        'rgb(199,234,229)',
+        '#2989d8',
+        4,
+        '#6d7f1e',
+        6,
+        '#c97220',
         8,
-        'rgb(0,60,48)'
+        '#bf0000'
       ]
     }
   }]

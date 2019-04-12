@@ -60,11 +60,12 @@
         <v-card small>
           <v-card-title primary-title>
             <p>
-              Voor meer informatie over deze viewer kunt u terecht bij Milou Wolters (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Rolien van der Mark (<a href="https://www.deltares.nl/nl/">Deltares</a>).
-            <br>
-              Voor meer informatie over Klimaatbestendige Netwerken is te verkrijgen bij Angela Vlaar (<a href="https://www.rijkswaterstaat.nl/">Rijkswaterstaat</a>) of Gerda Lenselink (<a href="https://www.deltares.nl/nl/">Deltares</a>).
+              Dit instrument wordt ontwikkeld door Rijkswaterstaat en Deltares in het kader van Klimaatbestendige Netwerken. Op dit moment is het instrument nog in ontwikkeling, en bevat deze viewer kaarten van de vaardiepte bij OLR onder verschillende klimaatscenario’s voor een deel van het hoofdvaarwegennet. Aan de beelden kunnen geen rechten worden ontleend.
             </p>
-
+            <p>
+              Voor meer informatie over deze viewer kunt u terecht bij Milou Wolters (Rijkswaterstaat) of Rolien van der Mark (Deltares).
+              Voor meer informatie over Klimaatbestendige Netwerken is te verkrijgen bij Angela Vlaar (Rijkswaterstaat) of Gerda Lenselink (Deltares).
+            </p>
             <div id="logos">
               <img class="logos" src="../../static/images/Rijkswaterstaat.svg">
               <img class="logos" src="../../static/images/deltares.svg">
@@ -116,6 +117,10 @@ pre {
 
 .v-expansion-panel__header {
   background-color: #F5F5F5;
+}
+
+.toolbar {
+  padding: 0;
 }
 
 </style>

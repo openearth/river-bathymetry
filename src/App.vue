@@ -38,9 +38,7 @@ html, body {
   top: 64px;
   z-index: 1;
   overflow-y: overlay;
-  max-height: calc(100% - 64px);
-  width: 20vw !important;
-  min-width: 300px !important;
+  height: calc(100% - 64px) !important;
 }
 
 </style>

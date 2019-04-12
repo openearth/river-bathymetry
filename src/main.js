@@ -1,3 +1,8 @@
+// Required to work on MSIE 11
+import 'babel-polyfill'
+import promise from 'es6-promise';
+import 'isomorphic-fetch';
+
 import Vue from 'vue'
 import './plugins/vuetify'
 import App from './App.vue'
